@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirstApp", "DBFirstApp.csproj", "{B076708D-B8AD-435D-A5EF-AE09FF0A77D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModelFirst", "..\DBModelFirst\DBModelFirst.csproj", "{C2A07B4D-2AF9-4A97-ABE1-DF6B49F54369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCodeFirst", "..\DBCodeFirst\DBCodeFirst.csproj", "{4D08254F-9AE2-4D94-8DE4-86BDD7A98BA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B076708D-B8AD-435D-A5EF-AE09FF0A77D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B076708D-B8AD-435D-A5EF-AE09FF0A77D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B076708D-B8AD-435D-A5EF-AE09FF0A77D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B076708D-B8AD-435D-A5EF-AE09FF0A77D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A07B4D-2AF9-4A97-ABE1-DF6B49F54369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A07B4D-2AF9-4A97-ABE1-DF6B49F54369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A07B4D-2AF9-4A97-ABE1-DF6B49F54369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A07B4D-2AF9-4A97-ABE1-DF6B49F54369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D08254F-9AE2-4D94-8DE4-86BDD7A98BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D08254F-9AE2-4D94-8DE4-86BDD7A98BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D08254F-9AE2-4D94-8DE4-86BDD7A98BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D08254F-9AE2-4D94-8DE4-86BDD7A98BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

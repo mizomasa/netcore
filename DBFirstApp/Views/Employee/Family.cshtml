@@ -1,0 +1,161 @@
+@model DBFirstApp.Controllers.Employee.ViewModel.EmployeeFamilyViewModel
+
+@{
+    ViewData["Title"] = "家族情報";
+}
+
+<h4>家族情報</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Self" asp-route-id="@Model.EmployeeId">本人情報</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" 　asp-action="Qualification" asp-route-id="@Model.EmployeeId">資格</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Department" asp-route-id="@Model.EmployeeId">所属</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" asp-action="Family" asp-route-id="@Model.EmployeeId">家族</a>
+                    </li>
+                </ul>
+            </div>
+            <form asp-action="Family">
+                <div class="card-body">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label asp-for="Family.FirstName" class="control-label"></label>
+                                    <input asp-for="Family.FirstName" class="form-control" />
+                                    <span asp-validation-for="Family.FirstName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label asp-for="Family.LastName" class="control-label"></label>
+                                    <input asp-for="Family.LastName" class="form-control" />
+                                    <span asp-validation-for="Family.LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Family.Birthday" class="control-label"></label>
+                                    <input asp-for="Family.Birthday" class="form-control" />
+                                    <span asp-validation-for="Family.Birthday" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Family.RelationShip" class="control-label"></label>
+                                    <input asp-for="Family.RelationShip" class="form-control" />
+                                    <span asp-validation-for="Family.RelationShip" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-1">
+                                <div class="form-group">
+                                    <label asp-for="Family.Sex" class="control-label"></label>
+                                    <span asp-validation-for="Family.Sex" class="text-danger"></span>
+                                    @foreach (var key in (TempData["HumanType"] as Dictionary<int, String>).Keys)
+                                    {
+                                        @Html.RadioButtonFor(m => m.Family.Sex, key);
+                                        var a = TempData["HumanType"] as Dictionary<int, String>;
+                                        @Html.DisplayName(a[key]);
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Families[0].FirstName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Families[0].LastName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Families[0].Birthday)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Families[0].Sex)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Families[0].RelationShip)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                if (Model == null)
+                                {
+                                    <tr>
+                                        <td>
+                                            <Label>対象データがありません。</Label>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach (var item in Model.Families)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FirstName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LastName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Birthday)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Sex)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.RelationShip)
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

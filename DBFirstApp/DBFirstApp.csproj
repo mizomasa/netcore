@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="SQL\" />
+    <Folder Include="Service\" />
+    <Folder Include="Infrastracture\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Controllers\Employee\" />
+    <Folder Include="Service\repository\" />
+    <Folder Include="Controllers\Employee\ViewModel\" />
+    <Folder Include="Controllers\Employee\ViewModel\Factory\" />
+    <Folder Include="Ex\" />
+    <Folder Include="Domain\Employees\" />
+    <Folder Include="Domain\Employees\ValueObject\" />
+    <Folder Include="Domain\Interface\" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="SampleSystem\Application\CircleApplicationService.cs" />
+    <Compile Remove="SampleSystem\Application\CanNotRegisterCircleException.cs" />
+    <Compile Remove="SampleSystem\Program.cs" />
+    <Compile Remove="SampleSystem\Startup.cs" />
+    <Compile Remove="SampleSystem\Models\ErrorViewModel.cs" />
+    <Compile Remove="SampleSystem\Controllers\HomeController.cs" />
+    <Compile Remove="SampleSystem\obj\Debug\netcoreapp3.1\SampleSystem.RazorAssemblyInfo.cs" />
+    <Compile Remove="SampleSystem\Models\ValueObject\CircleId.cs" />
+    <Compile Remove="SampleSystem\Models\ValueObject\CircleName.cs" />
+    <Compile Remove="SampleSystem\Models\Circle.cs" />
+    <Compile Remove="SampleSystem\Models\User.cs" />
+    <Compile Remove="SampleSystem\Application\ICircleRepository.cs" />
+    <Compile Remove="SampleSystem\Application\ICircleFactor.cs" />
+    <Compile Remove="SampleSystem\Application\CircleService.cs" />
+    <Compile Remove="SampleSystem\Controllers\CircleCreateCommand.cs" />
+    <Compile Remove="SampleSystem\Application\IUserRpository.cs" />
+    <Compile Remove="SampleSystem\Application\UserNotFoundException.cs" />
+    <Compile Remove="SampleSystem\Models\ValueObject\UserId.cs" />
+    <Compile Remove="SampleSystem\Controllers\CircleJoinCommand.cs" />
+    <Compile Remove="SampleSystem\Application\CircleFullException.cs" />
+    <Compile Remove="SampleSystem\Application\CircleNotFoundException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SampleSystem\wwwroot\favicon.ico" />
+    <None Remove="SampleSystem\wwwroot\css\site.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\LICENSE" />
+    <None Remove="SampleSystem\wwwroot\js\site.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery\dist\jquery.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery\LICENSE.txt" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Remove="SampleSystem\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Remove="SampleSystem\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <None Remove="SampleSystem\obj\Debug\netcoreapp3.1\SampleSystem.csprojAssemblyReference.cache" />
+    <None Remove="SampleSystem\obj\SampleSystem.csproj.nuget.g.targets" />
+    <None Remove="SampleSystem\obj\SampleSystem.csproj.nuget.g.props" />
+    <None Remove="SampleSystem\obj\SampleSystem.csproj.nuget.cache" />
+    <None Remove="SampleSystem\obj\Debug\netcoreapp3.1\SampleSystem.assets.cache" />
+    <None Remove="SampleSystem\obj\Debug\netcoreapp3.1\SampleSystem.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Remove="SampleSystem\obj\Debug\netcoreapp3.1\SampleSystem.RazorAssemblyInfo.cache" />
+    <None Remove="DBFirstData.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="SampleSystem\Views\_ViewImports.cshtml" />
+    <Content Remove="SampleSystem\Views\Home\Index.cshtml" />
+    <Content Remove="SampleSystem\Views\Shared\Error.cshtml" />
+    <Content Remove="SampleSystem\Views\_ViewStart.cshtml" />
+    <Content Remove="SampleSystem\Views\Home\Privacy.cshtml" />
+    <Content Remove="SampleSystem\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="SampleSystem\Views\Shared\_Layout.cshtml" />
+    <Content Remove="SampleSystem\appsettings.Development.json" />
+    <Content Remove="SampleSystem\appsettings.json" />
+    <Content Remove="SampleSystem\Properties\launchSettings.json" />
+    <Content Remove="SampleSystem\obj\SampleSystem.csproj.nuget.dgspec.json" />
+    <Content Remove="SampleSystem\obj\project.assets.json" />
+    <Content Remove="DBCodeFirst\Views\_ViewImports.cshtml" />
+    <Content Remove="DBCodeFirst\Views\_ViewStart.cshtml" />
+    <Content Remove="DBCodeFirst\Views\Home\Index.cshtml" />
+    <Content Remove="DBCodeFirst\Views\Shared\Error.cshtml" />
+    <Content Remove="DBCodeFirst\Views\Home\Privacy.cshtml" />
+    <Content Remove="DBCodeFirst\Views\Shared\_Layout.cshtml" />
+    <Content Remove="DBCodeFirst\Properties\launchSettings.json" />
+    <Content Remove="mono_crash.42f6ec106.0.json" />
+    <Content Remove="mono_crash.42f6ec106.0.json" />
+  </ItemGroup>
+</Project>

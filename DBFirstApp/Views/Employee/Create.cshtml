@@ -1,0 +1,156 @@
+@model DBFirstApp.Controllers.Employee.ViewModel.EmployeeCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>新規作成</h1>
+
+<h4>社員</h4>
+<hr />
+
+
+<div class="content">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="title">新規社員作成</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-5 pr-1">
+
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Id" class="control-label"></label>
+                                    <input asp-for="Id" class="form-control" />
+                                    <span asp-validation-for="Id" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label"></label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label"></label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Birthday" class="control-label"></label>
+                                    <input asp-for="Birthday" class="form-control" />
+                                    <span asp-validation-for="Birthday" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-1">
+                                <div class="form-group">
+                                    <label asp-for="Sex" class="control-label"></label>
+                                    <span asp-validation-for="Sex" class="text-danger"></span>
+                                    @foreach (var key in (TempData["HumanType"] as Dictionary<int, String>).Keys)
+                                    {
+                                        @Html.RadioButtonFor(m => m.Sex, key);
+                                        var a = TempData["HumanType"] as Dictionary<int, String>;
+                                        @Html.DisplayName(a[key]);
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="card-body">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" 　id="preview" src="../assets/img/mike.jpg" alt="...">
+                                <h5 class="title">---</h5>
+                            </a>
+                            <p class="description">
+                                description
+                            </p>
+                        </div>
+                        <p class="description text-center">
+                            select Employee Image.
+                        </p>
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-primary">
+                                    Choose File<input type="file" style="display:none">
+                                </span>
+                            </label>
+                            <input type="text" id="myImage" class="form-control" readonly="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <div class="author">
+                            <img class="avatar border-gray" 　id="preview">
+                            <h5 class="title">name</h5>
+                            <p class="description">
+                                michael24
+                            </p>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-primary">
+                                    Choose File<input type="file" style="display:none">
+                                </span>
+                            </label>
+                            <input type="text" id="myImage" class="form-control" readonly="">
+                        </div>
+                        <p class="description text-center">
+                            "Lamborghini Mercy <br>
+                            Your chick she so thirsty <br>
+                            I'm in that two seat Lambo"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
